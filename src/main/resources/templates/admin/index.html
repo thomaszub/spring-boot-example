@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin-Seite</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+
+<h1>Admin-Seite</h1>
+<p>
+    <a href="/">Hauptseite</a>
+</p>
+<p>
+<table>
+    <caption>
+        Datenbank-Historie
+    </caption>
+    <thead>
+    <tr>
+        <th scope="col">Version</th>
+        <th scope="col">Beschreibung</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="history: ${flywaySchemaHistory}">
+        <td th:text="${history.version}" />
+        <td th:text="${history.description}" />
+    </tr>
+    </tbody>
+</table>
+</p>
+
+</body>
+</html>

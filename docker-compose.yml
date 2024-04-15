@@ -1,0 +1,27 @@
+version: "3"
+volumes:
+  pgadmin:
+    driver: local
+  pgdata:
+    driver: local
+
+services:
+  db:
+    image: postgres:15.6
+    environment:
+      POSTGRES_USER: dbuser
+      POSTGRES_PASSWORD: Password1!
+      POSTGRES_DB: demo
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4:8.5
+    environment:
+      PGADMIN_DEFAULT_EMAIL: demo@local.org
+      PGADMIN_DEFAULT_PASSWORD: Password1!
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin:/var/lib/pgadmin
