@@ -2,10 +2,10 @@ spring:
   application:
     name: demo
   datasource:
-    url: jdbc:postgresql://localhost:5432/demo
-    username: dbuser
-    password: Password1!
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:sqlserver://localhost\\DESKTOP-BIT5CT1:1433;databaseName=SpringDemo;integratedSecurity=false;encrypt=false;
+    username: SA
+    password: RPSsql12345
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     show-sql: true
     hibernate:

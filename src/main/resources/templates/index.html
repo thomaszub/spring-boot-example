@@ -9,6 +9,37 @@
 <h1>Hauptseite</h1>
 <p>
     <a href="/admin">Admin-Seite</a>
+    <a href="/user">Neuer User</a>
+</p>
+
+<p>
+<table>
+    <caption>
+        Users
+    </caption>
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Passwort</th>
+        <th scope="col">E-Mail</th>
+        <th scope="col">erstellt am</th>
+        <th scope="col">geändert am</th>
+        <th scope="col">gelöscht</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user: ${users}">
+        <td th:text="${user.id}" />
+        <td th:text="${user.username}" />
+        <td th:text="${user.password}" />
+        <td th:text="${user.email}" />
+        <td th:text="${user.createdAt}" />
+        <td th:text="${user.updatedAt}" />
+        <td th:text="${user.deleted}" />
+    </tr>
+    </tbody>
+</table>
 </p>
 
 </body>
