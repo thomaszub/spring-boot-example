@@ -11,6 +11,12 @@
     <a href="/admin">Admin-Seite</a>
     <a href="/user">Neuer User</a>
 </p>
+<p>
+<form action="#" th:action="@{/}" th:object="${searchFilter}" method="get">
+    <p>Name<input type="text" th:field="*{name}"/></p>
+    <p><input type="submit" value="suchen"/></p>
+</form>
+</p>
 
 <p>
 <table>
